@@ -15,6 +15,9 @@
     2. [CI/CD](#templates)
         1. [Travis-CI](#travis)
         2. [Jenkins](#jen)
+    3. [Technologies and Libraries](#tech)
+        1. [Dockerfile](#docker)
+        2. [CFFI with Python](#cffi)
 3. [License](#lic)
 4. [Donations](#don)
 
@@ -39,6 +42,7 @@ it should have compiling, running, testing and debugging as targets or at least 
 - [GHDL](#ghdl)
 - [Travis-CI](#travis)
 - [Jenkins](#jen)
+- [Dockerfile](#docker)
 
 <a name="go"/>
 
@@ -309,6 +313,30 @@ sudo pacman -S jenkins cmake
 
 ##### Usage
 The Jenkinsfile details very explicitly how the pipeline is executed.
+
+<a name="docker"/>
+
+### Dockerfile
+[![docker](https://img.shields.io/badge/-template-2496ED?style=flat-square&logo=docker&logoColor=white)](https://www.docker.com/)
+
+An example use of a dockerfile. The idea is to show how one can write a dockerfile for a given linux OS with countless
+dependencies, environment variables, file structures and volume instantiations. There is also the use of an entrypoint
+script to show what could be done within the docker, since with a shell script the possibilities are endless.
+
+##### Dependencies
+- [Docker](https://www.docker.com/)
+
+```sh
+sudo pacman -S docker
+```
+
+##### Usage
+```sh
+$ make build    # builds the custom docker with a tag and a repo
+$ make run      # runs the docker through the given entrypoint script
+$ make clean    # deletes the docker
+$ make reset    # deletes the docker and then its image
+```
 
 <a name="lic"/>
 
