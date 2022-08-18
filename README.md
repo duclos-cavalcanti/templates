@@ -2,6 +2,10 @@
 
 1. [Introduction](#intro)
 2. [Templates](#templates)
+    1. [Go](#go)
+    2. [Rust](#rust)
+    3. [C](#C)
+    4. [Cpp](#cpp)
 2. [License](#lic)
 2. [Donations](#don)
 
