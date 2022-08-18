@@ -2,14 +2,19 @@
 
 1. [Introduction](#intro)
 2. [Templates](#templates)
-    1. [Go](#go)
-    2. [Rust](#rust)
-    3. [C](#C)
-    4. [Cpp](#cpp)
-    5. [Lua](#lua)
-    6. [Haskell](#haskell)
-2. [License](#lic)
-2. [Donations](#don)
+    1. [Languages](#templates)
+        1. [Go](#go)
+        2. [Rust](#rust)
+        3. [Lua](#lua)
+        4. [C](#C)
+        5. [C w/ Lua](#clua)
+        6. [Cpp](#cpp)
+        7. [Haskell](#haskell)
+    2. [CI/CD](#templates)
+        1. [Jenkins](#jen)
+        2. [Travis-CI](#travis)
+3. [License](#lic)
+4. [Donations](#don)
 
 <a name="intro"/>
 
@@ -23,9 +28,10 @@ it should have compiling, running, testing and debugging as targets or at least 
 ## Templates
 - [Go](#go)
 - [Rust](#rust)
-- [C](#C)
-- [Cpp](#cpp)
 - [Lua](#lua)
+- [C](#C)
+- [C w/ Lua](#clua)
+- [Cpp](#cpp)
 - [Haskell](#haskell)
 
 <a name="go"/>
@@ -81,6 +87,33 @@ $ cargo test              # unit testing
 $ cargo fmt               # format go files
 ```
 
+<a name="lua"/>
+
+### Lua
+<img alt="Lua" src="https://img.shields.io/badge/-template-2C2D72?style=flat-square&logo=lua&logoColor=white" />
+
+##### Dependencies
+
+- [lua](http://www.lua.org/)
+- [luarocks](https://luarocks.org/)
+- [luacheck](https://github.com/mpeterv/luacheck)
+- [stylua](https://github.com/johnnymorganz/stylua), if styling/formatting is wanted
+
+```sh
+$ sudo pacman -S luarocks
+$ sudo luarocks install luacheck
+$ cargo install stylua      # needs rust installed
+```
+
+##### Usage
+
+```sh
+$ make        # runs lua project
+$ make style  # runs stylua and styles project accordingly
+$ make lint   # runs styling first, then lints the project
+```
+
+
 <a name="C"/>
 
 ### C
@@ -107,43 +140,42 @@ Additionally, there are two bakes in targets called `run` and `debug`. How they 
 `.cmake` files found in the cmake folder within the template project. They do as their name suggest, however to
 be able to successfully use the debugger, one needs [gdb](https://sourceware.org/gdb/bugs/) installed in their system.
 
-<a name="cpp"/>
+<a name="clua"/>
 
-### Cpp
-<img alt="C" src="https://img.shields.io/badge/-template-00599C?style=flat-square&logo=cplusplus&logoColor=white" />
-
-Almost a 1 to 1 copy of the [C]("C") template. If it is necessary to specify a version of the language change the following line within `CMakeLists.txt`:
-
-```cmake
-set (CMAKE_CXX_STANDARD 11)
-```
-
-
-<a name="lua"/>
-
-### Lua
+### C w/ Lua
+<img alt="C" src="https://img.shields.io/badge/-template-A8B9CC?style=flat-square&logo=c&logoColor=white" />
 <img alt="Lua" src="https://img.shields.io/badge/-template-2C2D72?style=flat-square&logo=lua&logoColor=white" />
 
 ##### Dependencies
 
 - [lua](http://www.lua.org/)
-- [luarocks](https://luarocks.org/)
-- [luacheck](https://github.com/mpeterv/luacheck)
-- [stylua](https://github.com/johnnymorganz/stylua), if styling/formatting is wanted
+- [CMake](https://cmake.org/)
 
 ```sh
-$ sudo pacman -S luarocks
-$ sudo luarocks install luacheck
-$ cargo install stylua      # needs rust installed
+$ sudo pacman -S cmake lua
 ```
 
 ##### Usage
+It's the same process as in the [C](#c) template, the only difference is that the c binary is communicating with the lua virtual machine which of course also was written in C. Essentially, C can call functions and read/write variables within lua and vice versa. This can be very powerful and lead to interesting applications.
 
 ```sh
-$ make        # runs lua project
-$ make style  # runs stylua and styles project accordingly
-$ make lint   # runs styling first, then lints the project
+$ cd build
+$ cmake ..
+$ make
 ```
+
+
+<a name="cpp"/>
+
+### Cpp
+<img alt="C" src="https://img.shields.io/badge/-template-00599C?style=flat-square&logo=cplusplus&logoColor=white" />
+
+Almost a 1 to 1 copy of the [C](#c) template. If it is necessary to specify a version of the language change the following line within `CMakeLists.txt`:
+
+```cmake
+set (CMAKE_CXX_STANDARD 11)
+```
+
 
 <a name="haskell"/>
 
