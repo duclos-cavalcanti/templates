@@ -6,6 +6,8 @@
     2. [Rust](#rust)
     3. [C](#C)
     4. [Cpp](#cpp)
+    5. [Lua](#lua)
+    6. [Haskell](#haskell)
 2. [License](#lic)
 2. [Donations](#don)
 
@@ -23,6 +25,7 @@ it should have compiling, running, testing and debugging as targets or at least 
 - [Rust](#rust)
 - [C](#C)
 - [Cpp](#cpp)
+- [Lua](#lua)
 - [Haskell](#haskell)
 
 <a name="go"/>
@@ -36,8 +39,9 @@ it should have compiling, running, testing and debugging as targets or at least 
 - [godoc](https://pkg.go.dev/golang.org/x/tools/cmd/godoc) for documentation generation
 
 ```sh
-$ go install  https://github.com/derekparker/delve
-$ go install  golang.org/x/tools/cmd/godoc
+$ sudo pacman -S go
+$ go install  https://github.com/derekparker/delve  # if debugging is wanted
+$ go install  golang.org/x/tools/cmd/godoc          # if documentation is wanted
 ```
 
 ##### Usage
@@ -61,6 +65,12 @@ $ make fmt    # format go files
 - [rustup](https://rustup.rs/)
 - [rust](https://www.rust-lang.org/)
 
+```sh
+$ sudo pacman -S rustup
+$ rustup update stable
+$ rustup component add rls rust-src # for lsp to be used with your editor
+```
+
 ##### Usage
 ```sh
 $ cargo build             # build's project
@@ -80,6 +90,10 @@ $ cargo fmt               # format go files
 
 - [CMake](https://cmake.org/)
 
+```sh
+sudo pacman -S cmake
+```
+
 ##### Usage
 With [CMake](https://cmake.org/) it is possible to abstract away much of the flags and command line arguments needed within a large project. To be able to build said project, these are the necessary steps:
 
@@ -93,20 +107,45 @@ Additionally, there are two bakes in targets called `run` and `debug`. How they 
 `.cmake` files found in the cmake folder within the template project. They do as their name suggest, however to
 be able to successfully use the debugger, one needs [gdb](https://sourceware.org/gdb/bugs/) installed in their system.
 
+<a name="cpp"/>
+
 ### Cpp
 <img alt="C" src="https://img.shields.io/badge/-template-00599C?style=flat-square&logo=cplusplus&logoColor=white" />
-
-##### Dependencies
-
-- [CMake](https://cmake.org/)
-
-##### Usage
 
 Almost a 1 to 1 copy of the [C]("C") template. If it is necessary to specify a version of the language change the following line within `CMakeLists.txt`:
 
 ```cmake
 set (CMAKE_CXX_STANDARD 11)
 ```
+
+
+<a name="lua"/>
+
+### Lua
+<img alt="Lua" src="https://img.shields.io/badge/-template-2C2D72?style=flat-square&logo=lua&logoColor=white" />
+
+##### Dependencies
+
+- [lua](http://www.lua.org/)
+- [luarocks](https://luarocks.org/)
+- [luacheck](https://github.com/mpeterv/luacheck)
+- [stylua](https://github.com/johnnymorganz/stylua), if styling/formatting is wanted
+
+```sh
+$ sudo pacman -S luarocks
+$ sudo luarocks install luacheck
+$ cargo install stylua      # needs rust installed
+```
+
+##### Usage
+
+```sh
+$ make        # runs lua project
+$ make style  # runs stylua and styles project accordingly
+$ make lint   # runs styling first, then lints the project
+```
+
+<a name="haskell"/>
 
 ### Haskell
 [![haskell](https://img.shields.io/badge/-template-5D4F85?style=flat-square&logo=haskell&logoColor=white)](https://go.dev/)
