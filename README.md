@@ -51,6 +51,25 @@ $ make docs   # generate documentation
 $ make fmt    # format go files
 ```
 
+<a name="rust"/>
+
+### Rust
+[![rust](https://img.shields.io/badge/-template-000000?style=flat-square&logo=rust&logoColor=white)](https://www.rust-lang.org/)
+
+##### Dependencies
+- [rustup](https://rustup.rs/)
+- [rust](https://www.rust-lang.org/)
+
+##### Usage
+```sh
+$ cargo build             # build's project
+$ cargo build --release   # stores executable in target/release and performs optimizations
+$ cargo check             # checks if project compiles without building
+$ cargo run               # builds project and runs binary
+$ cargo test              # unit testing
+$ cargo fmt               # format go files
+```
+
 <a name="C"/>
 
 ### C
