@@ -13,8 +13,8 @@
         8. [Latex](#tex)
         8. [GHDL](#ghdl)
     2. [CI/CD](#templates)
-        1. [Jenkins](#jen)
-        2. [Travis-CI](#travis)
+        1. [Travis-CI](#travis)
+        2. [Jenkins](#jen)
 3. [License](#lic)
 4. [Donations](#don)
 
@@ -38,6 +38,7 @@ it should have compiling, running, testing and debugging as targets or at least 
 - [Latex](#tex)
 - [GHDL](#ghdl)
 - [Travis-CI](#travis)
+- [Jenkins](#jen)
 
 <a name="go"/>
 
@@ -172,14 +173,22 @@ $ make
 <a name="cpp"/>
 
 ### Cpp
-<img alt="C" src="https://img.shields.io/badge/-template-00599C?style=flat-square&logo=cplusplus&logoColor=white" />
 
+<img alt="Cpp" src="https://img.shields.io/badge/-template-00599C?style=flat-square&logo=cplusplus&logoColor=white" />
+
+##### Dependencies
+- [CMake](https://cmake.org/)
+
+```sh
+sudo pacman -S cmake
+```
+
+##### Usage
 Almost a 1 to 1 copy of the [C](#c) template. If it is necessary to specify a version of the language change the following line within `CMakeLists.txt`:
 
 ```cmake
 set (CMAKE_CXX_STANDARD 11)
 ```
-
 
 <a name="haskell"/>
 
@@ -257,6 +266,49 @@ sudo pacman -S cmake
 ##### Usage
 An account has to be created at travis-ci. Following to that, one would have to give permissions to the travis-ci bot within github. That way, any project that is pushed and contains a `travis.yml` file will be evaluated by the travis bot. The pipeline steps examples are listed in the above mentioned file, once again as an example of what one could do. Also further configuration
 can be done in one's travis account.
+
+<a name="jenkins"/>
+
+### Jenkins
+[![jenkins](https://img.shields.io/badge/-template-D24939?style=flat-square&logo=jenkins&logoColor=white)](https://www.jenkins.io/)
+
+There are two project examples at hand. One is the use of jenkins within a docker, which eliminates the dependency
+of jenkins directly. Also theoretically shows the use of a containerized deployment of this CI/CD program. The other one
+is a regular cmake project that simply has a `Jenkinsfile` that directs how the pipeline should be executed. However, for the
+latter's case one has to configure jenkins to look at this project either locally or through a git-based portal and order
+it to deploy the pipeline when needed.
+
+#### Jenkins within Docker
+##### Dependencies
+
+- [Docker](https://www.docker.com/)
+
+```sh
+sudo pacman -S docker
+```
+
+##### Usage
+```sh
+$ make build    # pulls and builds the jenkins docker
+$ make run      # runs the docker at port 8080
+$ make log      # shows the log output of the running docker
+$ make stop     # stops docker
+$ make restart  # restarts docker
+$ make clean    # stops and deletes the jenkins docker
+$ make reset    # stops docker, deletes it, and then its image
+```
+
+#### Jenkins CMake
+##### Dependencies
+
+- [Jenkins](https://www.jenkins.io/)
+
+```sh
+sudo pacman -S jenkins cmake
+```
+
+##### Usage
+The Jenkinsfile details very explicitly how the pipeline is executed.
 
 <a name="lic"/>
 
