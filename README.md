@@ -37,6 +37,7 @@ it should have compiling, running, testing and debugging as targets or at least 
 - [Haskell](#haskell)
 - [Latex](#tex)
 - [GHDL](#ghdl)
+- [Travis-CI](#travis)
 
 <a name="go"/>
 
@@ -235,10 +236,27 @@ make reset  # deletes a running docker if there is one and the pulled docker ima
 <a name="ghdl"/>
 
 ### GHDL
+Project is working, however I need to document the steps and dependencies.
 
 ```sh
 TODO
 ```
+
+<a name="travis"/>
+
+### Travis-CI
+[![travis](https://img.shields.io/badge/-template-3EAAAF?style=flat-square&logo=travisci&logoColor=white)](https://www.travis-ci.com/)
+
+##### Dependencies
+Depends on the project in question. Here, as an example a regular `cpp` CMake project is used.
+
+```sh
+sudo pacman -S cmake
+```
+
+##### Usage
+An account has to be created at travis-ci. Following to that, one would have to give permissions to the travis-ci bot within github. That way, any project that is pushed and contains a `travis.yml` file will be evaluated by the travis bot. The pipeline steps examples are listed in the above mentioned file, once again as an example of what one could do. Also further configuration
+can be done in one's travis account.
 
 <a name="lic"/>
 

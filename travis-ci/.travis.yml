@@ -1,0 +1,52 @@
+sudo: false
+
+language: c
+
+os: linux
+
+compiler: gcc
+
+branches:
+    only:
+        - travis_dev
+        - ci
+
+addons:
+    apt:
+        packages:
+            - cmake
+            - lcov
+            - gcc-multilib
+
+matrix:
+    include:
+        # Normal Build
+        - os: linux
+          env:
+            - TEST="Standard Build"
+          script:
+            - cd project
+            - cd build
+            - cmake ..
+            - make
+
+        # Running Build
+        - os: linux
+          env:
+            - TEST="Standard Build Run"
+          script:
+            - cd project
+            - cd build
+            - cmake ..
+            - make
+            - ../bin/bar
+
+        # Dummy Test
+        - os: linux
+          env:
+            - TEST="Dummy Test Build"
+          script:
+            - cd project
+            - cd build
+            - cmake ..
+            - make foobar
