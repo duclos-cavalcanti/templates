@@ -20,16 +20,49 @@ it should have compiling, running, testing and debugging as targets or at least 
 - [C](#C)
 - [Cpp](#cpp)
 
+<a name="go"/>
+
+### Go
+[![golang](https://img.shields.io/badge/-template-00ADD8?style=flat-square&logo=Go&logoColor=white)](https://go.dev/)
+
+##### Dependencies
+- [go](https://go.dev/)
+- [dlv](https://github.com/derekparker/delve) for debugging, if needed
+- [godoc](https://pkg.go.dev/golang.org/x/tools/cmd/godoc) for documentation generation
+
+```sh
+$ go install  https://github.com/derekparker/delve
+$ go install  golang.org/x/tools/cmd/godoc
+```
+
+##### Usage
+```sh
+$ make        # build's project
+$ make build  # also build's project
+$ make run    # runs binary
+$ make debug  # runs binary with debugger
+$ make test   # unit testing
+$ make cover  # test with coverage information
+$ make docs   # generate documentation
+$ make fmt    # format go files
+```
+
 <a name="C"/>
 
 ### C
+<img alt="C" src="https://img.shields.io/badge/-template-A8B9CC?style=flat-square&logo=c&logoColor=white" />
 
-With the [CMake](https://cmake.org/) build system it is possible to abstract away much of the flags and command line arguments needed within a large project. To be able to build said project, these are the necessary steps:
+##### Dependencies
+
+- [CMake](https://cmake.org/)
+
+##### Usage
+With [CMake](https://cmake.org/) it is possible to abstract away much of the flags and command line arguments needed within a large project. To be able to build said project, these are the necessary steps:
 
 ```sh
-cd build
-cmake ..
-make
+$ cd build
+$ cmake ..
+$ make
 ```
 
 Additionally, there are two bakes in targets called `run` and `debug`. How they are setup can be seen in the
@@ -37,6 +70,13 @@ Additionally, there are two bakes in targets called `run` and `debug`. How they 
 be able to successfully use the debugger, one needs [gdb](https://sourceware.org/gdb/bugs/) installed in their system.
 
 ### Cpp
+<img alt="C" src="https://img.shields.io/badge/-template-00599C?style=flat-square&logo=cplusplus&logoColor=white" />
+
+##### Dependencies
+
+- [CMake](https://cmake.org/)
+
+##### Usage
 
 Almost a 1 to 1 copy of the [C]("C") template. If it is necessary to specify a version of the language change the following line within `CMakeLists.txt`:
 
