@@ -1,0 +1,75 @@
+name:                haskell-template
+version:             0.1.0.0
+synopsis:            A template project to get started with Haskell/Cabal.
+description:         A template project to get started with Haskell/Cabal.
+homepage:            https://github.com/duclos-cavalcanti/haskell-project-template
+license:             MIT
+license-file:        LICENSE
+author:              Daniel Duclos-Cavalcanti
+maintainer:          daniel.duclos.cavalcanti@gmail.com
+category:            Demo
+build-type:          Simple
+cabal-version:       >=1.10
+
+source-repository head
+  type: git
+  location: https://github.com/duclos-cavalcanti/haskell-project-template.git
+
+-- configuration for building a library
+-- hs-source-dirs: src   a list of directories to find source files relative to the root directory
+-- exposed-modules:      speciifies modules in the library's public API
+-- other-modules:        not publicly exposed libraries but still are part of the library
+-- build-depends:        versions of libraries that this project depends on
+library
+  default-language: Haskell2010
+  hs-source-dirs: src
+  exposed-modules:
+    HaskellStarter.CommitPrinter
+  other-modules:
+    HaskellStarter.Util
+  build-depends:
+    base   >= 4.6   && < 5,
+    github >= 0.7.4
+
+-- all modules HAVE to be explicitly specified either in other-modules or exposed modules, without it
+-- they will not be looked upon by cabal.
+
+-- configuration for our executable / binary
+-- starts the executable block and anmes it
+-- you may have different executables in one 
+-- Cabal file.
+
+-- hs-source-dirs: src       list of directories to find source files
+-- main-is: Main.hs          file that contains the main function, main must have type IO()
+-- build-depends:            same from the library section, notice that Cabal doesnt implicitely add
+executable githubCommitPrinter
+  default-language: Haskell2010
+  hs-source-dirs: app
+  main-is: Main.hs
+  build-depends:
+    base >= 4.6 && < 5,
+    haskell-template
+
+-- configuration for Unit tests and properties
+test-suite unit-tests-and-properties
+  type:           exitcode-stdio-1.0
+  main-is:        Main.hs
+  hs-source-dirs: test
+  build-depends:
+    base                       >= 4.6 && < 5,
+    HUnit                      >= 1.2 && < 1.4,
+    QuickCheck                 >= 2.4 && < 2.8,
+    test-framework             >= 0.6 && < 0.9,
+    test-framework-hunit       >= 0.3 && < 0.5,
+    test-framework-quickcheck2 >= 0.2 && < 0.4,
+    test-framework-th          >= 0.2 && < 0.4
+
+-- doctests
+test-suite doctest
+  type:           exitcode-stdio-1.0
+  main-is:        DocTest.hs
+  hs-source-dirs: test
+  build-depends:  
+    base    >= 4.6 && < 5,
+    doctest >= 0.9 && < 0.11,
+    Glob    >= 0.7 && < 0.9

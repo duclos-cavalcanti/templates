@@ -1,0 +1,9 @@
+dist 
+dist*
+dist**
+dist/*
+
+*lock
+
+.stack/*
+.stack*

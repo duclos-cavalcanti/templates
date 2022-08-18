@@ -1,0 +1,40 @@
+name:                haskell-template
+version:             0.1.0.0
+github:              "duclos-cavalcanti/haskell-template"
+license:             MIT
+author:              Daniel Duclos-Cavalcanti
+maintainer:          daniel.duclos.cavalcanti@gmail.com
+copyright:           "2022 Daniel Duclos-Cavalcanti"
+
+extra-source-files:
+- README.md
+
+description:         Please see the README on GitHub at <https://github.com/duclos-cavalcanti/haskell-template#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+
+executables:
+  template-bin:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - haskell-template
+
+tests:
+  test-bin:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - haskell-template

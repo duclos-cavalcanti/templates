@@ -23,6 +23,7 @@ it should have compiling, running, testing and debugging as targets or at least 
 - [Rust](#rust)
 - [C](#C)
 - [Cpp](#cpp)
+- [Haskell](#haskell)
 
 <a name="go"/>
 
@@ -105,6 +106,30 @@ Almost a 1 to 1 copy of the [C]("C") template. If it is necessary to specify a v
 
 ```cmake
 set (CMAKE_CXX_STANDARD 11)
+```
+
+### Haskell
+[![haskell](https://img.shields.io/badge/-template-5D4F85?style=flat-square&logo=haskell&logoColor=white)](https://go.dev/)
+
+An interesting functional language, seemingly very beloved by its community. This project template was derived from
+a great repository which is mentioned in the README. Also, there is also mentioned the cabal build system, which stack uses
+under the hood. However, it was found by me to be much easier to use stack.
+
+##### Dependencies
+- [haskell](https://www.haskell.org/)
+- [stack](https://docs.haskellstack.org/en/stable/README/), the build tool
+
+##### Usage
+Great documentation on stack can be found [here](https://docs.haskellstack.org/en/stable/README/), also a simple tutorial can be found [here](https://docs.haskellstack.org/en/stable/GUIDE/).
+
+```sh
+$ make build    # runs stack build
+$ make run      # runs the binary, runs stack exec <project name>
+$ make test     # runs stack test to perform unit testing, untested!
+$ make fmt      # formats haskell files
+$ make clean    # runs stack clean
+$ make purge    # runs stack purge
+$ make docs     # runs cabal haddock, untested!
 ```
 
 <a name="lic"/>
