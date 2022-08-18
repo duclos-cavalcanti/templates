@@ -10,6 +10,8 @@
         5. [C w/ Lua](#clua)
         6. [Cpp](#cpp)
         7. [Haskell](#haskell)
+        8. [Latex](#tex)
+        8. [GHDL](#ghdl)
     2. [CI/CD](#templates)
         1. [Jenkins](#jen)
         2. [Travis-CI](#travis)
@@ -33,6 +35,8 @@ it should have compiling, running, testing and debugging as targets or at least 
 - [C w/ Lua](#clua)
 - [Cpp](#cpp)
 - [Haskell](#haskell)
+- [Latex](#tex)
+- [GHDL](#ghdl)
 
 <a name="go"/>
 
@@ -112,7 +116,6 @@ $ make        # runs lua project
 $ make style  # runs stylua and styles project accordingly
 $ make lint   # runs styling first, then lints the project
 ```
-
 
 <a name="C"/>
 
@@ -201,6 +204,40 @@ $ make fmt      # formats haskell files
 $ make clean    # runs stack clean
 $ make purge    # runs stack purge
 $ make docs     # runs cabal haddock, untested!
+```
+
+<a name="tex"/>
+
+### Latex
+<img alt="Latex" src="https://img.shields.io/badge/-template-008080?style=flat-square&logo=latex&logoColor=white" />
+
+The idea was to create a latex project that did not need to require an installation
+of tex and it's huge libraries. Using a containerized docker that takes care of
+this work, it becomes very easy to work with latex in a OS agnostic manner. The docker build in question is
+
+##### Dependencies
+
+- [Docker](https://www.docker.com/)
+- [docker-texlive](https://github.com/thomasWeise/docker-texlive)
+
+```sh
+sudo pacman -S docker
+```
+Docker may need special rights to be able to be run without `sudo`.
+
+##### Usage
+```sh
+make        # does it all, pulls docker if necessary, builds the main.tex into a main.pdf
+make clean  # cleans project
+make reset  # deletes a running docker if there is one and the pulled docker image.
+```
+
+<a name="ghdl"/>
+
+### GHDL
+
+```sh
+TODO
 ```
 
 <a name="lic"/>
