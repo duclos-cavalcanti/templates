@@ -516,7 +516,27 @@ $ make docs
 ```
 
 #### Gtest Bazel
+Similar goals to the CMake version, however done so with Bazel.
 
+##### Dependencies
+- [Bazel](https://bazel.build/)
+- [lcov](https://wiki.documentfoundation.org/Development/Lcov)
+
+```sh
+sudo pacman -S bazel lcov
+```
+
+##### Usage
+1. **Building**
+```
+bazel build ...
+```
+
+2. **Running Tests and Obtaining Test Report**
+
+```
+python test.py
+```
 
 <a name="lic"/>
 
