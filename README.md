@@ -568,9 +568,12 @@ I have a ko-fi and a buy-me-a-coffee account, so if you found this repo useful a
 <a href="https://github.com/duclos-cavalcanti/templates/LICENSE">
   <img src="https://img.shields.io/badge/license-GPL-blue.svg" />
 </a>
-<!-- <a href="https://github.com/duclos-cavalcanti/templates/LICENSE"> -->
-<!--   <img src="/github/languages/code-size/duclos-cavalcanti/templates.svg" /> -->
-<!-- </a> -->
+<a>
+  <img src="https://img.shields.io/github/languages/code-size/duclos-cavalcanti/templates.svg" />
+</a>
+<a>
+  <img src="https://img.shields.io/github/commit-activity/m/duclos-cavalcanti/templates.svg" />
+</a>
 
 </p>
 
