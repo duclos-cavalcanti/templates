@@ -18,6 +18,9 @@
     3. [Technologies and Libraries](#tech)
         1. [Dockerfile](#docker)
         2. [CFFI with Python](#cffi)
+        3. [GoogleTest](#cffi)
+        4. [SDL2 C w/ Lua](#cffi)
+        5. [ClangFormat](#cffi)
 3. [License](#lic)
 4. [Donations](#don)
 
@@ -43,6 +46,7 @@ it should have compiling, running, testing and debugging as targets or at least 
 - [Travis-CI](#travis)
 - [Jenkins](#jen)
 - [Dockerfile](#docker)
+- [ClangFormat](#clang)
 
 <a name="go"/>
 
@@ -336,6 +340,31 @@ $ make build    # builds the custom docker with a tag and a repo
 $ make run      # runs the docker through the given entrypoint script
 $ make clean    # deletes the docker
 $ make reset    # deletes the docker and then its image
+```
+
+### Clang
+[![clang](https://img.shields.io/badge/clang-template-red.svg)](https://clang.llvm.org/docs/ClangFormat.html)
+
+An example toy C project and how to format it using `clang-format`. Possible styles are:
+* gnu
+* google
+* llvm
+* chromium
+* mozilla
+* webkit
+* microsoft
+
+##### Dependencies
+- [Clang](https://clang.llvm.org/docs/ClangFormat.html)
+
+```sh
+paru -S clang-format-all-git
+```
+
+##### Usage
+```sh
+$ make                # default, formats the given toy C project within google's style
+$ make STYLE=<style>  # style according to the given variable
 ```
 
 <a name="lic"/>
