@@ -53,6 +53,7 @@ it should have compiling, running, testing and debugging as targets or at least 
 - [Git Hooks](#git)
 - [Python CFFI](#cffi)
 - [C/Lua SDL2](#sdl)
+- [Google Test](#gtest)
 
 <a name="go"/>
 
@@ -451,15 +452,71 @@ sudo pacman -S cmake lua sdl2 sdl2_gfx sdl2_image sdl2_mixer sdl2_ttf
 ##### Usage
 1. Build
 ```sh
-cd build
-cmake ..
-make
+$ cd build
+$ cmake ..
+$ make
 ```
 
 2. Run
 ```sh
-make run
+$ make run
 ```
+
+<a name="gtest"/>
+
+### Google Test
+[![gtest](https://img.shields.io/badge/-template-4285F4?style=flat-square&logo=google&logoColor=white)](https://www.docker.com/)
+
+There are two example templates in this repo. One that attacks this problem through [CMake](https://cmake.org/) and another that
+does so through [Bazel](https://bazel.build/).
+
+#### Gtest CMake
+Simple project template that aims:
+1. To write code in `C` that is compiled/built with [CMake](https://cmake.org/).
+2. Test the project using [GoogleTest's](http://google.github.io/googletest/) `C++` framework, which is also mantained through `CMake`.
+3. Obtain coverage reports of said tests using GNU's `gcov/lcov`.
+4. Integrates all goes through targets in CMake.
+
+##### Dependencies
+- [CMake](https://cmake.org/)
+- [lcov](https://wiki.documentfoundation.org/Development/Lcov)
+
+```sh
+sudo pacman -S cmake lcov
+```
+
+##### Usage
+1. Build Toy Project
+```sh
+$ cd build
+$ cmake ..
+$ make
+```
+
+2. Build Tests
+```sh
+$ cd test/build
+$ cmake ..
+$ make
+```
+
+3. Get Test Report
+```sh
+$ make report
+```
+
+4. Get Coverage Report
+```sh
+$ make coverage
+```
+
+5. Generate documentation for both
+```sh
+$ make docs
+```
+
+#### Gtest Bazel
+
 
 <a name="lic"/>
 
@@ -487,9 +544,9 @@ I have a ko-fi and a buy-me-a-coffee account, so if you found this repo useful a
 <a href="https://github.com/duclos-cavalcanti/templates/LICENSE">
   <img src="https://img.shields.io/badge/license-GPL-blue.svg" />
 </a>
-<a href="https://github.com/duclos-cavalcanti/templates/LICENSE">
-  <img src="/github/languages/code-size/duclos-cavalcanti/templates.svg" />
-</a>
+<!-- <a href="https://github.com/duclos-cavalcanti/templates/LICENSE"> -->
+<!--   <img src="/github/languages/code-size/duclos-cavalcanti/templates.svg" /> -->
+<!-- </a> -->
 
 </p>
 
