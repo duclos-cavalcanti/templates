@@ -19,6 +19,8 @@ Simple project template that aims:
 2. Test the project using [GoogleTest's](http://google.github.io/googletest/) `C++` framework, which is also mantained through `Bazel`.
 3. Obtain coverage reports of said tests using GNU's `gcov/lcov`.
 
+Google Test reports are obatined in html with the help of [gtest2html](https://gitlab.uni-koblenz.de/agrt/gtest2html).
+
 <a name="dependencies"/>
 
 ## 2. Dependencies
