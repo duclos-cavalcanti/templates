@@ -20,8 +20,9 @@
         2. [ClangFormat](#clang)
     4. [Libraries](#lib)
         1. [Python CFFI](#cffi)
-        2. [C++ GoogleTest](#googletest)
-        3. [C/Lua SDL2](#sdl)
+        2. [C/Lua SDL2](#sdl)
+    5. [Unit Testing](#test)
+        1. [C++ GoogleTest](#googletest)
 3. [License](#lic)
 4. [Donations](#don)
 
@@ -389,7 +390,8 @@ abstracted away.
 - [PyTest](https://docs.pytest.org/en/6.2.x/)
 
 ```sh
-paru -S clang-format-all-git
+sudo pacman -S cmake
+pip install cffi pytest
 ```
 
 ##### Usage
@@ -398,6 +400,46 @@ $ make build   # builds backend, installs it and compiles the C++-to-Python bind
 $ make run     # runs the example python program that interfaces with the toy `C++` backend
 $ make test    # runs unit-tests that ultimately test the python-wrappers that call upon the `C++` backend
 $ make clean   # cleans project
+```
+
+<a name="sdl"/>
+
+### C/Lua SDL2
+[![sdl](https://img.shields.io/badge/C\/Lua_SDL-template-3776AB.svg)](https://pypi.org/project/cffi/)
+
+Boilerplate code for small projects that need graphics with easy extendibility. Here it is done with
+the `Lua` scripting language. This is also a learning project to look at the capabilities
+of a work written in `C/C++` which can be scripted by users or extended with `Lua`.
+
+The underlying graphics library is `SDL2`, which makes the project written in C.
+This is also the chosen language since the `Lua` *VM* has a clean and powerful C API,
+which was a language design goal. `Lua` was made to be embedded and further the capabilities of
+a language such as `C`. The project would also be maintained by a portable build system like CMake.
+
+##### Dependencies
+- [CMake](https://cmake.org/)
+- [Lua](http://www.lua.org/)
+- [SDL2](https://github.com/libsdl-org/SDL)
+
+```sh
+sudo pacman -S cmake lua sdl2 sdl2_gfx sdl2_image sdl2_mixer sdl2_ttf
+```
+
+```sh
+paru -S clang-format-all-git
+```
+
+##### Usage
+1. Build
+```sh
+cd build
+cmake ..
+make
+```
+
+2. Run
+```sh
+make run
 ```
 
 <a name="lic"/>
