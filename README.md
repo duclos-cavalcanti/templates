@@ -18,6 +18,7 @@
     3. [Technologies](#tech)
         1. [Dockerfile](#docker)
         2. [ClangFormat](#clang)
+        3. [Git Hooks](#git)
     4. [Libraries](#lib)
         1. [Python CFFI](#cffi)
         2. [C/Lua SDL2](#sdl)
@@ -49,6 +50,9 @@ it should have compiling, running, testing and debugging as targets or at least 
 - [Jenkins](#jen)
 - [Dockerfile](#docker)
 - [ClangFormat](#clang)
+- [Git Hooks](#git)
+- [Python CFFI](#cffi)
+- [C/Lua SDL2](#sdl)
 
 <a name="go"/>
 
@@ -346,7 +350,7 @@ $ make reset    # deletes the docker and then its image
 
 <a name="clang"/>
 
-### Clang
+### Clang Format
 [![clang](https://img.shields.io/badge/clang-template-red.svg)](https://clang.llvm.org/docs/ClangFormat.html)
 
 An example toy C project and how to format it using `clang-format`. Possible styles are:
@@ -370,6 +374,25 @@ paru -S clang-format-all-git
 $ make                # default, formats the given toy C project within google's style
 $ make STYLE=<style>  # style according to the given variable
 ```
+
+<a name="git"/>
+
+### Git Hooks
+[![sdl](https://img.shields.io/badge/git--hooks-template-yellow.svg)](https://pypi.org/project/cffi/)
+
+A small repo to exemplify what one could do with `git hooks`. Also gives a minor
+explanation to what specific hooks do, when they are activated and how they could
+be used. Based on [this](https://www.atlassian.com/git/tutorials/git-hooks).
+
+##### Dependencies
+- [Git](http://www.lua.org/)
+
+```sh
+sudo pacman -S git
+```
+
+##### Usage
+Not straightforward, please read through [README](git-hooks/README.md).
 
 <a name="cffi"/>
 
@@ -423,10 +446,6 @@ a language such as `C`. The project would also be maintained by a portable build
 
 ```sh
 sudo pacman -S cmake lua sdl2 sdl2_gfx sdl2_image sdl2_mixer sdl2_ttf
-```
-
-```sh
-paru -S clang-format-all-git
 ```
 
 ##### Usage
