@@ -10,8 +10,9 @@
         5. [C w/ Lua](#clua)
         6. [Cpp](#cpp)
         7. [Haskell](#haskell)
-        8. [Latex](#tex)
-        8. [GHDL](#ghdl)
+        8. [Common Lisp](#clisp)
+        9. [Latex](#tex)
+        10. [GHDL](#ghdl)
     2. [CI/CD](#templates)
         1. [Travis-CI](#travis)
         2. [Jenkins](#jen)
@@ -19,11 +20,13 @@
         1. [Dockerfile](#docker)
         2. [ClangFormat](#clang)
         3. [Git Hooks](#git)
-    4. [Libraries](#lib)
+    4. [Libraries and Frameworks](#lib)
         1. [Python CFFI](#cffi)
         2. [C/Lua SDL2](#sdl)
+        3. [C OpenMPI](#sdl)
     5. [Unit Testing](#test)
-        1. [C++ GoogleTest](#googletest)
+        1. [C++ GoogleTest](#gtest)
+        2. [Python Pytest](#pytest)
 3. [License](#lic)
 4. [Donations](#don)
 
@@ -54,6 +57,7 @@ it should have compiling, running, testing and debugging as targets or at least 
 - [Python CFFI](#cffi)
 - [C/Lua SDL2](#sdl)
 - [Google Test](#gtest)
+- [Pytest](#pytest)
 
 <a name="go"/>
 
