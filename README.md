@@ -34,7 +34,7 @@
 
 ## Introduction
 Every time I'm learning a new technology or a new language, I feel the need to create a reproducible template project that has already the basics built in. The idea is to have a somewhat abstracted away template, such that I
-can in the future use it as a basis for an actual project without having to remember fine details and commands to the specific tech stack at hand.
+can in the future use it as a basis for an actual project without having to remember fine details and commands to the specific tech stack at hand. There are also tutorials mixed among templates, which are always correctly giving props to the respective authors or sources, since they serve similar purposes as boilerplate/template projects.
 
 Since that was becoming a strong habit and there were numerous little template projects littered throughout my profile, I took the liberty to unify them under a single repository. They hopefully have the basics covered, as in a language
 it should have compiling, running, testing and debugging as targets or at least documentation on how to perform these actions for the given template.
