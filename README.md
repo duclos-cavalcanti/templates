@@ -15,12 +15,13 @@
     2. [CI/CD](#templates)
         1. [Travis-CI](#travis)
         2. [Jenkins](#jen)
-    3. [Technologies and Libraries](#tech)
+    3. [Technologies](#tech)
         1. [Dockerfile](#docker)
-        2. [CFFI with Python](#cffi)
-        3. [GoogleTest](#cffi)
-        4. [SDL2 C w/ Lua](#cffi)
-        5. [ClangFormat](#cffi)
+        2. [ClangFormat](#clang)
+    4. [Libraries](#lib)
+        1. [Python CFFI](#cffi)
+        2. [C++ GoogleTest](#googletest)
+        3. [C/Lua SDL2](#sdl)
 3. [License](#lic)
 4. [Donations](#don)
 
@@ -342,6 +343,8 @@ $ make clean    # deletes the docker
 $ make reset    # deletes the docker and then its image
 ```
 
+<a name="clang"/>
+
 ### Clang
 [![clang](https://img.shields.io/badge/clang-template-red.svg)](https://clang.llvm.org/docs/ClangFormat.html)
 
@@ -365,6 +368,36 @@ paru -S clang-format-all-git
 ```sh
 $ make                # default, formats the given toy C project within google's style
 $ make STYLE=<style>  # style according to the given variable
+```
+
+<a name="cffi"/>
+
+### Python CFFI
+[![cffi](https://img.shields.io/badge/Python_CFFI-template-3776AB.svg)](https://pypi.org/project/cffi/)
+
+Example project template that implements a `C++` backend exposed through the use of `CFFI`.
+The idea is to be able to use the flexibility of `Python`, but still harness the heavy
+lifting or speed from `C++` through using bindings to connect data between the two stacks.
+
+The backend compilation, packaging and installation is managed through `CMake`. Finally
+through a couple of simple `Makefiles`, the different capabilities of the project are
+abstracted away.
+
+##### Dependencies
+- [CMake](https://cmake.org/)
+- [CFFI](https://cffi.readthedocs.io/en/latest/)
+- [PyTest](https://docs.pytest.org/en/6.2.x/)
+
+```sh
+paru -S clang-format-all-git
+```
+
+##### Usage
+```sh
+$ make build   # builds backend, installs it and compiles the C++-to-Python binding interface
+$ make run     # runs the example python program that interfaces with the toy `C++` backend
+$ make test    # runs unit-tests that ultimately test the python-wrappers that call upon the `C++` backend
+$ make clean   # cleans project
 ```
 
 <a name="lic"/>

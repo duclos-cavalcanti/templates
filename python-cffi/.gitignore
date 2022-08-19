@@ -1,0 +1,10 @@
+cpp_interface*
+
+include
+include/*
+
+lib
+lib/*
+
+*.cache
+*cache*
