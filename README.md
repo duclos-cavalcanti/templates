@@ -23,7 +23,7 @@
     4. [Libraries and Frameworks](#lib)
         1. [Python CFFI](#cffi)
         2. [C/Lua SDL2](#sdl)
-        3. [C OpenMPI](#sdl)
+        3. [C++ OpenMPI](#mpi)
     5. [Unit Testing](#test)
         1. [C++ GoogleTest](#gtest)
         2. [Python Pytest](#pytest)
@@ -56,6 +56,7 @@ it should have compiling, running, testing and debugging as targets or at least 
 - [Git Hooks](#git)
 - [Python CFFI](#cffi)
 - [C/Lua SDL2](#sdl)
+- [C++ OpenMPI](#mpi)
 - [Google Test](#gtest)
 - [Pytest](#pytest)
 
@@ -464,6 +465,37 @@ $ make
 2. Run
 ```sh
 $ make run
+```
+
+<a name="mpi"/>
+
+### C++ OpenMPI
+[![mpi](https://img.shields.io/badge/OpenMPI-template-black.svg)](https://www.open-mpi.org/)
+
+The Open MPI Project is an open source Message Passing Interface implementation that is developed and maintained by a consortium of academic, research, and industry partners.
+
+The source files are not made by me and are taken from this [tutorial](www.mpitutorial.com), authored by Wes Kendall. This template serves as an easy way to compile all projects through CMake and be able to visualize their functionalities and capabilities.
+
+
+##### Dependencies
+- [CMake](https://cmake.org/)
+- [OpenMPI](http://www.lua.org/)
+
+```sh
+sudo pacman -S cmake openmpi
+```
+
+##### Usage
+1. Build
+```sh
+$ cd build
+$ cmake ..
+$ make
+```
+
+2. Run
+```sh
+$ ../bin/<binary name>
 ```
 
 <a name="gtest"/>
