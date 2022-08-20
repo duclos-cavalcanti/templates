@@ -595,6 +595,35 @@ bazel build ...
 python test.py
 ```
 
+<a name="pytest"/>
+
+### Pytest
+[![python](https://img.shields.io/badge/-template-3776AB?style=flat-square&logo=Python&logoColor=white)](https://go.dev/)
+
+Example use of [pytest](https://docs.pytest.org/en/7.1.x/) in a quick and dirty project. Should be changed to use a proper
+initialized python module, not a c-like src file.
+
+```
+TODO
+```
+
+##### Dependencies
+- [python](https://www.python.org/)
+- [pytest](https://docs.pytest.org/en/7.1.x/)
+
+## Dependencies
+```
+sudo pacman -S python
+pip install pytest
+```
+
+##### Usage
+```sh
+$ make        # runs project
+$ make test   # unit testing
+$ make clean  # cleans project
+```
+
 <a name="lic"/>
 
 ## License
