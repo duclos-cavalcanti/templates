@@ -236,6 +236,26 @@ $ make purge    # runs stack purge
 $ make docs     # runs cabal haddock, untested!
 ```
 
+<a name="lisp"/>
+
+### Common Lisp
+[![lisp](https://img.shields.io/badge/CommonLisp-template-purple.svg)](https://lisp-lang.org/)
+
+Minimal template project for common lisp applications. Uses the [asdf](https://common-lisp-libraries.readthedocs.io/asdf/) build tool to manage the project, it's dependencies and
+testing. The testing library used here is [prove](https://github.com/fukamachi/prove).
+
+##### Dependencies
+- [quicklisp](https://www.quicklisp.org/beta/)
+- [sbcl](http://www.sbcl.org/)
+
+##### Usage
+
+```sh
+$ make          # compiles and runs application
+$ make test     # runs prove unit testing
+$ make clean    # cleans project
+```
+
 <a name="tex"/>
 
 ### Latex
