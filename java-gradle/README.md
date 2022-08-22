@@ -8,6 +8,7 @@ The best resource will of course be found in the gradle's official [website](htt
 5. java-gradle-template
 
 ## Project
+Generic example:
 ```sh
 ├── gradle            # generated folder for wrapper files
 │   └── wrapper

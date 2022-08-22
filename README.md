@@ -278,8 +278,9 @@ sudo pacman -S jdk-openjdk gradle
 ##### Usage
 
 ```sh
-$ make          # compiles and runs application
-$ make test     # runs prove unit testing
+$ make          # runs application
+$ make build    # builds/packages application
+$ make test     # runs unit tests application
 $ make clean    # cleans project
 ```
 
@@ -291,6 +292,7 @@ $ make clean    # cleans project
 The idea was to create a latex project that did not need to require an installation
 of tex and it's huge libraries. Using a containerized docker that takes care of
 this work, it becomes very easy to work with latex in a OS agnostic manner. The docker build in question is
+[docker-texlive](https://github.com/thomasWeise/docker-texlive).
 
 ##### Dependencies
 

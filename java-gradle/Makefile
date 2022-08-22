@@ -10,7 +10,7 @@ run:
 	./gradlew run
 
 clean:
-	./gradlew build
+	rm -rf app/build
 
 
 .PHONY: test lint style
