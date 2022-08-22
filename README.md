@@ -11,8 +11,9 @@
         6. [Cpp](#cpp)
         7. [Haskell](#haskell)
         8. [Common Lisp](#lisp)
-        9. [Latex](#tex)
-        10. [GHDL](#ghdl)
+        9. [Java](#java)
+        10. [Latex](#tex)
+        11. [GHDL](#ghdl)
     2. [CI/CD](#templates)
         1. [Travis-CI](#travis)
         2. [Jenkins](#jen)
@@ -48,6 +49,7 @@ it should have compiling, running, testing and debugging as targets or at least 
 - [Cpp](#cpp)
 - [Haskell](#haskell)
 - [Common Lisp](#lisp)
+- [Java](#java)
 - [Latex](#tex)
 - [GHDL](#ghdl)
 - [Travis-CI](#travis)
@@ -248,6 +250,30 @@ testing. The testing library used here is [prove](https://github.com/fukamachi/p
 ##### Dependencies
 - [quicklisp](https://www.quicklisp.org/beta/)
 - [sbcl](http://www.sbcl.org/)
+
+##### Usage
+
+```sh
+$ make          # compiles and runs application
+$ make test     # runs prove unit testing
+$ make clean    # cleans project
+```
+
+<a name="java"/>
+
+### Java
+[![java](https://img.shields.io/badge/Java-template-yellow.svg)](https://www.java.com/en/)
+[![lisp](https://img.shields.io/badge/-template-02303A?style=flat-square&logo=gradle&logoColor=white)](https://docs.gradle.org/current/samples/sample_building_java_applications.html)
+
+The best resource will of course be found in the gradle's official [website](https://docs.gradle.org/current/samples/sample_building_java_applications.html). However this folder can be used either as a starting point or an illustration of a simple java application that
+
+##### Dependencies
+- [java](https://www.quicklisp.org/beta/)
+- [gradle](https://gradle.org/)
+
+```sh
+sudo pacman -S jdk-openjdk gradle
+```
 
 ##### Usage
 
