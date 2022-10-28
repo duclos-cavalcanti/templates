@@ -53,6 +53,7 @@ it should have compiling, running, testing and debugging as targets or at least 
 - [Java](#java)
 - [Latex](#tex)
 - [GHDL](#ghdl)
+- [Python](#python)
 - [Travis-CI](#travis)
 - [Jenkins](#jen)
 - [Dockerfile](#docker)
