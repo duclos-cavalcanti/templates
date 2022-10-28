@@ -14,6 +14,7 @@
         9. [Java](#java)
         10. [Latex](#tex)
         11. [GHDL](#ghdl)
+        12. [Python](#python)
     2. [CI/CD](#templates)
         1. [Travis-CI](#travis)
         2. [Jenkins](#jen)
@@ -319,6 +320,14 @@ Project is working, however I need to document the steps and dependencies.
 ```sh
 TODO
 ```
+
+<a name="python"/>
+
+### Python
+[![python](https://img.shields.io/badge/-template-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
+
+Python example project with unit-tests and a Makefile. Targets include venv setup and installation
+of the project in developer mode. The boilerplate is also ready to be installed from github as well.
 
 <a name="travis"/>
 

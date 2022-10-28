@@ -1,0 +1,17 @@
+# Byte-compiled
+__pycache__/
+
+# pyenv
+.python-version
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+pynotes.egg-info/
+pynotes.egg-info/*
+
+*.yaml
