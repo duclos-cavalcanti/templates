@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.4 FATAL_ERROR)
 
-project(linker)
+project(project)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
