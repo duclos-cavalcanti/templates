@@ -54,5 +54,5 @@ add_custom_target("debug"
     COMMENT "Debugging with GDB"
     DEPENDS ${PROJECT_NAME}
     WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
-    COMMAND gdb -tui --args ./bin/${PROJECT_NAME}
+    COMMAND gdb -tui -x ./GDBCOMMANDS --args ./bin/${PROJECT_NAME}
 )
