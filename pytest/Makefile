@@ -1,7 +1,7 @@
 SHELL := /bin/bash
 PWD := $(shell pwd)
 
-all:
+all: run
 .PHONY: clean run debug test
 
 clean:
