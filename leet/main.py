@@ -1,4 +1,4 @@
-# import ipdb
+import ipdb
 
 class Solution(object):
     def containsDuplicates(self, nums):
@@ -19,5 +19,7 @@ class Solution(object):
 
 
 if __name__ == "__main__":
+    ipdb.set_trace()
+    input =[1, 2, 3, 4] 
     s = Solution()
-    s.containsDuplicates([1, 2, 3, 4])
+    s.containsDuplicates(input)
